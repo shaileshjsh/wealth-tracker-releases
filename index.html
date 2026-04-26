@@ -125,7 +125,203 @@
     }
     .privacy-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: #8b949e; }
     .privacy-item span:first-child { font-size: 1.25rem; }
+    /* App Store style hero showcase */
+.hero-showcase {
+  margin: 4.2rem 0;
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid #2a3240;
+  background:
+    radial-gradient(1200px 500px at -10% -20%, rgba(53, 145, 255, 0.22), transparent 55%),
+    radial-gradient(800px 380px at 105% 115%, rgba(26, 194, 155, 0.20), transparent 55%),
+    linear-gradient(160deg, #0b111f 0%, #12192a 55%, #0c1220 100%);
+  box-shadow: 0 14px 36px rgba(2, 8, 20, 0.45);
+}
 
+.hero-copy {
+  margin-bottom: 1.4rem;
+}
+
+.hero-kicker {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #86b7ff;
+  margin-bottom: 0.45rem;
+  font-weight: 700;
+}
+
+.hero-showcase h2 {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  line-height: 1.15;
+  margin-bottom: 0.55rem;
+  color: #f4f7ff;
+}
+
+.hero-sub {
+  color: #a5b3c9;
+  max-width: 620px;
+  line-height: 1.55;
+}
+
+.device-stage {
+  border-radius: 14px;
+  border: 1px solid #2b3445;
+  background: linear-gradient(180deg, #11192b, #0b1221);
+  padding: 1rem;
+}
+
+.stage-shot {
+  position: relative;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: zoom-in;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #2b3448;
+}
+
+.stage-shot img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 250ms ease;
+}
+
+.stage-shot:hover img {
+  transform: scale(1.02);
+}
+
+.zoom-chip {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  background: rgba(8, 13, 24, 0.75);
+  color: #e5edff;
+  border: 1px solid #3f4a61;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  padding: 0.33rem 0.62rem;
+  backdrop-filter: blur(4px);
+}
+
+.thumb-rail {
+  margin-top: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.thumb {
+  border: 1px solid #2e3a51;
+  border-radius: 10px;
+  background: #0f1728;
+  color: #d3dff5;
+  padding: 0.38rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.thumb img {
+  width: 100%;
+  display: block;
+  border-radius: 7px;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  margin-bottom: 0.35rem;
+}
+
+.thumb span {
+  font-size: 0.78rem;
+  color: #9eb1d5;
+  display: block;
+  padding: 0 0.15rem 0.15rem;
+}
+
+.thumb:hover {
+  transform: translateY(-2px);
+  border-color: #4e6492;
+}
+
+.thumb.active {
+  border-color: #62a7ff;
+  box-shadow: 0 0 0 1px rgba(98, 167, 255, 0.45) inset;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(1, 4, 9, 0.90);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 1200;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-dialog {
+  width: min(1100px, 96vw);
+  max-height: 92vh;
+  background: #0d1117;
+  border: 1px solid #2e3645;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+}
+
+.lightbox-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.78rem 1rem;
+  border-bottom: 1px solid #21262d;
+}
+
+.lightbox-title {
+  font-size: 0.95rem;
+  color: #c9d1d9;
+  font-weight: 600;
+}
+
+.lightbox-close {
+  border: 1px solid #30363d;
+  background: #161b22;
+  color: #c9d1d9;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  padding: 0.34rem 0.7rem;
+  cursor: pointer;
+}
+
+.lightbox-img {
+  width: 100%;
+  display: block;
+  max-height: calc(92vh - 53px);
+  object-fit: contain;
+  background: #010409;
+}
+
+@media (max-width: 880px) {
+  .hero-showcase {
+    padding: 1.1rem;
+    margin: 3rem 0;
+  }
+
+  .thumb-rail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
     footer {
       text-align: center;
       padding: 2rem;
@@ -153,7 +349,53 @@
 </header>
 
 <main>
+<section class="hero-showcase" id="screenshots">
+  <div class="hero-copy">
+    <p class="hero-kicker">Product Preview</p>
+    <h2>See Wealth Tracker In Action</h2>
+    <p class="hero-sub">
+      Explore the real interface before downloading. Click any screen to zoom.
+    </p>
+  </div>
 
+  <div class="device-stage">
+    <button class="stage-shot" data-full="assets/screenshots/dashboard.png" data-title="Dashboard">
+      <img id="stageImage" src="assets/screenshots/dashboard.png" alt="Wealth Tracker Dashboard">
+      <span class="zoom-chip">Click to expand</span>
+    </button>
+
+    <div class="thumb-rail">
+      <button class="thumb active" data-src="assets/screenshots/dashboard.png" data-title="Dashboard">
+        <img src="assets/screenshots/dashboard.png" alt="Dashboard thumbnail">
+        <span>Dashboard</span>
+      </button>
+      <button class="thumb" data-src="assets/screenshots/orders.png" data-title="Orders">
+        <img src="assets/screenshots/orders.png" alt="Orders thumbnail">
+        <span>Orders</span>
+      </button>
+      <button class="thumb" data-src="assets/screenshots/reports.png" data-title="Reports">
+        <img src="assets/screenshots/reports.png" alt="Reports thumbnail">
+        <span>Reports</span>
+      </button>
+      <button class="thumb" data-src="assets/screenshots/settings.png" data-title="Settings">
+        <img src="assets/screenshots/settings.png" alt="Settings thumbnail">
+        <span>Settings</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-dialog">
+    <div class="lightbox-head">
+      <div class="lightbox-title" id="lightboxTitle">Screenshot</div>
+      <button class="lightbox-close" id="lightboxClose" type="button">Close</button>
+    </div>
+    <img class="lightbox-img" id="lightboxImg" alt="Expanded application screenshot">
+  </div>
+</div>
+
+  
   <div class="features">
     <div class="feature-card">
       <div class="icon">🏦</div>
@@ -218,6 +460,63 @@
     <a href="https://github.com/shaileshjsh/wealth-tracker-releases/issues">Feedback</a>
   </p>
 </footer>
+
+  <script>
+  (function () {
+    const stageImage = document.getElementById("stageImage");
+    const stageButton = document.querySelector(".stage-shot");
+    const thumbs = document.querySelectorAll(".thumb");
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxTitle = document.getElementById("lightboxTitle");
+    const closeBtn = document.getElementById("lightboxClose");
+
+    function setActiveThumb(btn) {
+      thumbs.forEach((t) => t.classList.remove("active"));
+      btn.classList.add("active");
+      const src = btn.dataset.src;
+      const title = btn.dataset.title || "Screenshot";
+      stageImage.src = src;
+      stageImage.alt = "Wealth Tracker " + title;
+      stageButton.dataset.full = src;
+      stageButton.dataset.title = title;
+    }
+
+    function openLightbox(src, title) {
+      lightboxImg.src = src;
+      lightboxTitle.textContent = title || "Screenshot";
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImg.src = "";
+      document.body.style.overflow = "";
+    }
+
+    thumbs.forEach((btn) => {
+      btn.addEventListener("click", () => setActiveThumb(btn));
+    });
+
+    stageButton.addEventListener("click", () => {
+      openLightbox(stageButton.dataset.full, stageButton.dataset.title);
+    });
+
+    closeBtn.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightbox();
+    });
+  })();
+</script>
 
 </body>
 </html>
