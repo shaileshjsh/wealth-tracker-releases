@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wealth Tracker – Personal Finance for macOS</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid #21262d;
+    }
+    header .badge {
+      display: inline-block;
+      background: #238636;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+    header h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+    header p {
+      font-size: 1.15rem;
+      color: #8b949e;
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+    .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-primary { background: #238636; color: #fff; }
+    .btn-secondary { background: #21262d; color: #e6edf3; border: 1px solid #30363d; }
+
+    main { max-width: 900px; margin: 0 auto; padding: 4rem 2rem; }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    .feature-card {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .feature-card .icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
+    .feature-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .feature-card p { font-size: 0.9rem; color: #8b949e; line-height: 1.5; }
+
+    .install-section {
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 4rem;
+    }
+    .install-section h2 { font-size: 1.4rem; margin-bottom: 1.25rem; }
+    .steps { list-style: none; counter-reset: step; }
+    .steps li {
+      counter-increment: step;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      color: #c9d1d9;
+    }
+    .steps li::before {
+      content: counter(step);
+      background: #238636;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.8rem;
+      min-width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .note {
+      margin-top: 1rem;
+      background: #1c2128;
+      border-left: 3px solid #d29922;
+      padding: 0.75rem 1rem;
+      border-radius: 0 6px 6px 0;
+      font-size: 0.875rem;
+      color: #e3b341;
+    }
+
+    .privacy-strip {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 4rem;
+      padding: 1.5rem;
+      background: #161b22;
+      border: 1px solid #21262d;
+      border-radius: 12px;
+    }
+    .privacy-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: #8b949e; }
+    .privacy-item span:first-child { font-size: 1.25rem; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid #21262d;
+      font-size: 0.85rem;
+      color: #8b949e;
+    }
+    footer a { color: #58a6ff; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="badge">v1.0.0 — Now Available</div>
+  <h1>Wealth Tracker</h1>
+  <p>A personal finance desktop app for macOS. Track all your accounts, monitor net worth across currencies, and generate wealth reports — all stored locally on your machine.</p>
+  <div class="cta-group">
+    <a class="btn btn-primary" href="https://github.com/YOUR-USERNAME/wealth-tracker-releases/releases/latest">
+      ⬇ Download for macOS
+    </a>
+    <a class="btn btn-secondary" href="https://github.com/YOUR-USERNAME/wealth-tracker-releases/issues">
+      🐛 Report an Issue
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <div class="features">
+    <div class="feature-card">
+      <div class="icon">🏦</div>
+      <h3>10 Account Types</h3>
+      <p>Cash, Equity, Mutual Fund, NPS, PPF, EPF, PRS, Fixed Deposit, Credit Card, and Loan.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">💱</div>
+      <h3>Multi-Currency</h3>
+      <p>Track accounts in different currencies with conversion rate management and base currency reporting.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📈</div>
+      <h3>Mark-to-Market</h3>
+      <p>Update asset prices for equity, mutual funds, NPS, and PRS to reflect current valuations.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📊</div>
+      <h3>Wealth Reports</h3>
+      <p>Total wealth snapshot and detailed transaction history with account and date filtering.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🔐</div>
+      <h3>Encrypted Backups</h3>
+      <p>AES-256-GCM encrypted database backups with password protection. Your data, your control.</p>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🧭</div>
+      <h3>Guided Onboarding</h3>
+      <p>7-step interactive tour walks you through setup on first launch. Restart anytime.</p>
+    </div>
+  </div>
+
+  <div class="install-section">
+    <h2>Installation</h2>
+    <ol class="steps">
+      <li>Download <strong>Wealth Tracker_1.0.0_aarch64.dmg</strong> from the latest release.</li>
+      <li>Open the DMG file.</li>
+      <li>Drag <strong>Wealth Tracker</strong> to your Applications folder.</li>
+      <li>Launch from Applications and follow the guided setup tour.</li>
+    </ol>
+    <div class="note">
+      ⚠️ If macOS shows a security warning, go to <strong>System Settings → Privacy & Security</strong> and click <strong>"Open Anyway"</strong>. This is expected for apps distributed outside the Mac App Store.
+    </div>
+  </div>
+
+  <div class="privacy-strip">
+    <div class="privacy-item"><span>🔒</span><span>All data stored locally</span></div>
+    <div class="privacy-item"><span>📡</span><span>Zero telemetry</span></div>
+    <div class="privacy-item"><span>☁️</span><span>No cloud, no servers</span></div>
+    <div class="privacy-item"><span>💸</span><span>Free to use</span></div>
+  </div>
+
+</main>
+
+<footer>
+  <p>
+    Wealth Tracker is free to use. Source code is proprietary.
+    &nbsp;·&nbsp;
+    <a href="https://github.com/YOUR-USERNAME/wealth-tracker-releases/releases">Releases</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/YOUR-USERNAME/wealth-tracker-releases/issues">Feedback</a>
+  </p>
+</footer>
+
+</body>
+</html>
