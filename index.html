@@ -434,15 +434,33 @@
   </div>
 
   <div class="install-section">
-    <h2>Installation</h2>
+    <h2>Installation For macOS</h2>
     <ol class="steps">
-      <li>Download <strong>Wealth Tracker_1.0.0_aarch64.dmg</strong> from the latest release.</li>
+      <li>Download <strong>Wealth.Tracker_2.1.0_aarch64.dmg</strong> from the latest release.</li>
       <li>Open the DMG file.</li>
       <li>Drag <strong>Wealth Tracker</strong> to your Applications folder.</li>
       <li>Launch from Applications and follow the guided setup tour.</li>
     </ol>
     <div class="note">
       ⚠️ If macOS shows a security warning, go to <strong>System Settings → Privacy & Security</strong> and click <strong>"Open Anyway"</strong>. This is expected for apps distributed outside the Mac App Store.
+      If macOS shows an error saying the application is corrupt, please execute below command in the Mac Terminal.
+      <strong>xattr -rd com.apple.quarantine /Applications/Wealth\ Tracker.app</strong>
+    </div>
+    <h2>Installation For Windows</h2>
+    <ol class="steps">
+      <li>Download <strong>Wealth.Tracker_2.1.0_x64_en-US.msi</strong> from the latest release.</li>
+      <li>Follow installation steps as directed</li>
+      <li>Launch from Applications and follow the guided setup tour.</li>
+    </ol>
+    <div class="note">
+      ⚠️ If Windows give any security warnings, please follow the below steps.
+      <ol class="steps">
+      <li>Right-click the .msi → Properties → check Unblock (if shown) → Apply.</li>
+      <li>Double-click installer.</li>
+      <li>If “Windows protected your PC” appears:
+          Click More info
+          Click Run anyway</li>
+    </ol>
     </div>
   </div>
 
